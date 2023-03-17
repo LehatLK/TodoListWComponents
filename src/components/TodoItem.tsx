@@ -31,5 +31,5 @@ const TodoItem = ({ item, handleToggleTodo, handleDeleteTodo }: TodoItemProps) =
     </li>
   );
 };
-
+//component
 export default TodoItem;
