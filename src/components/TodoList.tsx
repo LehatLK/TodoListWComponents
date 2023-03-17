@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import './App.css';
+import TodoItem from './TodoItem';
+import '../App.css';
 
 type TodoItem = {
   id: number;
@@ -51,21 +50,12 @@ const TodoList = () => {
         </div>
         <ul className="todo-items-list">
           {todoList.map((item) => (
-            <li
+            <TodoItem
               key={item.id}
-              className={item.completed ? "todo-item completed" : "todo-item"}
-              onClick={() => handleToggleTodo(item.id)}
-            >
-              <span>{item.text}</span>
-              <button className="delete-button" 
-              onClick = {(event) => {
-                event.stopPropagation();
-                handleDeleteTodo(item.id)
-              }}>
-                
-                <FontAwesomeIcon icon = {faTrash}/>
-              </button>
-            </li>
+              item={item}
+              handleToggleTodo={handleToggleTodo}
+              handleDeleteTodo={handleDeleteTodo}
+            />
           ))}
         </ul>
       </div>
@@ -74,4 +64,3 @@ const TodoList = () => {
 };
 
 export default TodoList;
-
