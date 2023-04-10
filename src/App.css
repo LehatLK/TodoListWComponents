@@ -7,8 +7,8 @@
 .todo-item {
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  padding: 30px;
+  border-bottom: 5px solid #ddd;
   cursor: pointer;
   font-size: 18px; /* make the font size bigger */
 }
